@@ -1,0 +1,19 @@
+spring:
+  datasource:
+    driver-class-name: org.h2.Driver
+    url: jdbc:h2:mem:myDB;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
+    username: sa
+    password: sags
+  liquibase:
+    enabled: true
+    change-log: classpath:/db/changelog/changelog-master.xml
+  jpa:
+    hibernate:
+      ddl-auto: none
+      database-platform: org.hibernate.dialect.H2Dialect
+    show-sql: true
+
+  h2:
+    console:
+      enabled: true
+      path: /console
